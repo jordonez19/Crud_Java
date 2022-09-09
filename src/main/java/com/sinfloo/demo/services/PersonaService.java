@@ -20,19 +20,27 @@ public class PersonaService implements  IpersonaService{
         return (List<Persona>)data.findAll();
     }
 
-    @Override
-    public Optional<Persona> listarId(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+
 
     @Override
     public int save(Persona p) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int res = 0;
+        Persona persona = data.save(p);
+        if(!persona.equals(null)){
+            res = 1;
+        }
+        return 0;
     }
 
     @Override
+    public Optional<Persona> listarId(int id) {
+        return data.findById( id );
+    }
+
+
+    @Override
     public void delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        data.deleteById( id );
     }
     
 }
