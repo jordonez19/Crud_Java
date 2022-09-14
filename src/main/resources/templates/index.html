@@ -28,8 +28,8 @@
                 <td th:text="${persona.name}"></td>
                 <td th:text="${persona.phone}"></td>
                 <td>
-                    <a th:href=" @{/editar/} + ${persona.id} " class=" bg-transparent p-md-2 text-decoration-none fw-bolder text-dark" ><i class="fa-solid fa-pen-clip"></i></a>
-                    <a th:onclick="sweetAlertDelete([[ ${ persona.id }]])"  class="  bg-transparent p-md-2 text-decoration-none fw-bolder text-danger" ><i style="cursor: pointer ;" class="fa-solid fa-trash"></i> </a>
+                    <a th:href=" @{/editar/}+${persona.id} " class=" bg-transparent p-md-2 text-decoration-none fw-bolder text-dark" ><i class="fa-solid fa-pen-clip"></i></a>
+                    <a th:onclick="sweetAlertDelete([[${persona.id}]]) "  class="  bg-transparent p-md-2 text-decoration-none fw-bolder text-danger" ><i style="cursor: pointer ;" class="fa-solid fa-trash"></i> </a>
                 </td>
             </tr>
             </tbody>
