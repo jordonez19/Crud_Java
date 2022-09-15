@@ -9,21 +9,26 @@ import lombok.Getter;
 import lombok.Setter;
     
 @Entity
-@Table(name = "persona")
+@Table(name = "user")
 
-public class Persona {
-    
-    
+public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter @Setter @Column(name = "id")
     private int id;
-    @Getter @Setter @Column(name = "name")
-    private String name;    
-    @Getter @Setter @Column(name = "phone")
-    private String phone;
-    
-    public Persona(){
+    @Getter @Setter @Column(name = "dni")
+    private String dni;
+    @Getter @Setter @Column(name = "placa")
+    private String placa;
+    @Getter @Setter @Column(name = "vehiculo")
+    private String vehiculo;
+    @Getter @Setter @Column(name = "tiempo")
+    private String tiempo;
+
+
+
+    public User(){
         
     }
     

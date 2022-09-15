@@ -1,7 +1,6 @@
 package com.sinfloo.demo.controller;
 import com.sinfloo.demo.interfaceService.IpersonaService;
-import com.sinfloo.demo.interfaces.IPersona;
-import com.sinfloo.demo.modelo.Persona;
+import com.sinfloo.demo.modelo.User;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,26 +22,26 @@ public class Controlador {
     
     @GetMapping(value = "/listar")
     public String listar(Model model){
-        List<Persona>personas = service.listar();
-        model.addAttribute("personas" , personas);
-        return "index";
-        /* averiguar atributo personas */
+        List<User> users = service.listar();
+        model.addAttribute("personas" , users);
+        return "index-testing";
+        /* averiguar atributo users */
     }
 
     @GetMapping(value = "/nuevo")
     public String agregar(Model model){
-        model.addAttribute("persona" , new Persona());
+        model.addAttribute("persona" , new User());
         return "form";
     }
     @PostMapping("/save")
-    public String save(@Validated Persona p, Model model){
+    public String save(@Validated User p, Model model){
         service.save(p);
         return  "redirect:/listar";
     }
 
     @GetMapping("/editar/{id}")
     public String editar(@PathVariable int id, Model model){
-        Optional<Persona> persona = service.listarId(id);
+        Optional<User> persona = service.listarId(id);
         model.addAttribute("persona",persona);
         return "form";
     }

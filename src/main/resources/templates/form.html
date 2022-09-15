@@ -12,7 +12,7 @@
 
   <div class="container mt-5 mb-5 px-auto ">
     <div class="col-sm-6 mx-auto">
-      <form th:action="@{/save}" method="POST" th:object="${persona}">
+      <form th:action="@{/save}" method="POST" th:object="${user}">
         <div class="card">
           <div class="card-header">
             <h3>Modulo Persona</h3>
@@ -23,12 +23,12 @@
               <input type="text" class="form-control" th:field="*{id}" >
             </div>
             <div class="form-group">
-              <label >NOMBRE</label>
-              <input type="text" class="form-control" th:field="*{name}" >
+              <label >ID</label>
+              <input type="text" class="form-control" th:field="*{dni}" >
             </div>
             <div class="form-group">
-              <label >TELEFONO</label>
-              <input type="text" class="form-control" th:field="*{phone}" >
+              <label >PLACA</label>
+              <input type="text" class="form-control" th:field="*{placa}" >
             </div>
           </div>
           <div class="card-footer text-end">

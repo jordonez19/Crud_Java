@@ -3,9 +3,10 @@ package com.sinfloo.demo.services;
 
 import com.sinfloo.demo.interfaceService.IpersonaService;
 import com.sinfloo.demo.interfaces.IPersona;
-import com.sinfloo.demo.modelo.Persona;
+import com.sinfloo.demo.modelo.User;
 import java.util.List;
 import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,24 +17,22 @@ public class PersonaService implements  IpersonaService{
     private IPersona data;
     
     @Override
-    public List<Persona> listar() {
-        return (List<Persona>)data.findAll();
+    public List<User> listar() {
+        return (List<User>)data.findAll();
     }
 
-
-
     @Override
-    public int save(Persona p) {
+    public int save(User p) {
         int res = 0;
-        Persona persona = data.save(p);
-        if(!persona.equals(null)){
+        User user = data.save(p);
+        if(!user.equals(null)){
             res = 1;
         }
         return 0;
     }
 
     @Override
-    public Optional<Persona> listarId(int id) {
+    public Optional<User> listarId(int id) {
         return data.findById( id );
     }
 

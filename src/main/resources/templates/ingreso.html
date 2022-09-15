@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,33 +12,30 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/static/style.css">
     <title>Parqueadero</title>
-    <style>
-        html{
-            height: 100vh;
-        }
-        body{
-            height: 100vh;
-            padding-top:5cm ;
-        }
-    </style>
 </head>
-<body >
-
-    <div class="container mt-5">
-        <div class="content w-50 m-auto">
-            <div class="row d-flex   ">
-                <div class="col-sm-6 mb-4">
-                    <a href="/ingreso.html" class="btn btn-success fw-bold fs-5 p-4 form-control">INGRESO VEHICULO</a><!-- th:href="@{/nuevo}" -->
+<body>
+    <div class="container mt-5 mb-5 px-auto ">
+        <div class="col-sm-6 mx-auto">
+            <form th:action="@{/save}" method="POST" th:object="${user}">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Registro Vehiculo</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>IDENTIFICACION</label>
+                            <input type="text" class="form-control" th:field="*{dni}">
+                        </div>
+                        <div class="form-group">
+                            <label>PLACA</label>
+                            <input type="text" class="form-control" th:field="*{placa}">
+                        </div>
+                    </div>
+                    <div class="card-footer text-end">
+                        <input type="submit" value="Guardar" class=" btn btn-primary">
+                    </div>
                 </div>
-                <div class="col-sm-6  mb-4">
-                    <a th:href="@{/factura}" class="btn btn-danger fw-bold fs-5 p-4 form-control">FACTURA VEHICULO</a>
-                </div>
-            </div>
-            <div class="row d-flex flex-column ">
-                <div class="col  mb-4">
-                    <a th:href="@{/listar}" class="btn btn-primary fw-bold fs-5 p-4 form-control">REGISTRO Y CONTROL</a>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 
