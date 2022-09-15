@@ -26,6 +26,9 @@ public class User {
     @Getter @Setter @Column(name = "tiempo")
     private String tiempo;
 
+    @OneToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "id")
+    private Factura fId;
 
 
     public User(){
